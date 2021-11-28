@@ -1,0 +1,32 @@
+name: 'SimpleLocalize Download'
+description: 'Download i18n files from the SimpleLocalize translation management platform.'
+author: "SimpleLocalize"
+branding:
+  icon: 'download-cloud'
+  color: 'blue'
+inputs:
+  apiKey:
+    description: 'API Key for the project'
+    required: true
+    default: ''
+  languageKey:
+    description: 'Language key'
+    required: false
+    default: 'en'
+  downloadPath:
+    description: 'Which files should be downloaded'
+    required: false
+    default: './messages.json'
+  downloadFormat:
+    description: 'In which format do you want to download the files'
+    required: false
+    default: 'multi-language-json'
+runs:
+  using: "composite"
+  steps:
+    - id: Setup
+      run: curl -s https://get.simplelocalize.io/install | bash
+      shell: bash
+    - id: Execution
+      shell: bash
+      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }}
