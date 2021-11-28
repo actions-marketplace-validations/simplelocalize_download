@@ -1,4 +1,4 @@
-# Download tranlsation files from SimpleLocalize i18n editor
+# Download translation files from SimpleLocalize i18n editor
 
 This Github Actions uses official and open-source SimpleLocalize CLI.
 
