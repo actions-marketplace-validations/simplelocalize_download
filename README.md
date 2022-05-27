@@ -23,7 +23,7 @@ jobs:
         uses: simplelocalize/download@lastest
         with:
           apiKey: <YOUR_API_KEY>
-          downloadPath: ./{lang}/output-sample.json
+          downloadPath: ./{lang}/translations.json
           downloadFormat: single-language-json
           downloadOptions: "ESCAPE_NEW_LINES" # optional
           languageKey: en # optional, it accepts only one lanauge key
