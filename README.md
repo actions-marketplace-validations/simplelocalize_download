@@ -20,9 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download translations
-        uses: simplelocalize/download@2.0
+        uses: simplelocalize/download@lastest
         with:
           apiKey: <YOUR_API_KEY>
-          downloadPath: ./output-sample.json
-          downloadFormat: multi-language-json
+          downloadPath: ./{lang}/output-sample.json
+          downloadFormat: single-language-json
+          downloadOptions: "ESCAPE_NEW_LINES" # optional
+          languageKey: en # optional, it accepts only one lanauge key
 ```
