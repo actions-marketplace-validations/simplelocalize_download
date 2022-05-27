@@ -25,8 +25,8 @@ runs:
   using: "composite"
   steps:
     - id: Setup
-      run: curl -s https://get.simplelocalize.io/install | bash
+      run: curl -s https://get.simplelocalize.io/2.0/install | bash
       shell: bash
     - id: Execution
       shell: bash
-      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }} --downloadOptions ${{ inputs.downloadOptions }}
+      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }} ${{ inputs.downloadOptions && '--downloadOptions' }} ${{ inputs.downloadOptions }}
