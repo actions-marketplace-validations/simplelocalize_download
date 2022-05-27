@@ -1,26 +1,26 @@
-name: 'SimpleLocalize Download'
-description: 'Download i18n files from the SimpleLocalize translation management platform.'
+name: 'Download localization files'
+description: 'Download localization files from SimpleLocalize translation editor'
 author: "SimpleLocalize"
 branding:
   icon: 'download-cloud'
   color: 'blue'
 inputs:
   apiKey:
-    description: 'API Key for the project'
+    description: 'Project API Key'
     required: true
     default: ''
-  languageKey:
-    description: 'Language key'
-    required: false
-    default: 'en'
   downloadPath:
-    description: 'Which files should be downloaded'
+    description: 'Where files should be downloaded'
     required: false
     default: './messages.json'
   downloadFormat:
-    description: 'In which format do you want to download the files'
+    description: 'Choose a localization files format'
     required: false
     default: 'multi-language-json'
+  downloadOptions:
+    description: 'Choose additional download options'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
@@ -29,4 +29,4 @@ runs:
       shell: bash
     - id: Execution
       shell: bash
-      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }}
+      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }} --downloadOptions ${{ inputs.downloadOptions }}
