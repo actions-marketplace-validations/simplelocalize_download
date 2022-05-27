@@ -26,5 +26,5 @@ jobs:
           downloadPath: ./{lang}/translations.json
           downloadFormat: single-language-json
           downloadOptions: "ESCAPE_NEW_LINES" # optional
-          languageKey: en # optional, it accepts only one lanauge key
+          languageKey: en # optional, it accepts only one language key
 ```
