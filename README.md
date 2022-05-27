@@ -12,7 +12,7 @@ Documentation: https://simplelocalize.io/docs/cli/download-translations/
 name: 'Download translations'
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
 
 jobs:
   build:
