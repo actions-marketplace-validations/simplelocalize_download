@@ -21,6 +21,10 @@ inputs:
     description: 'Choose additional download options'
     required: false
     default: ''
+  languageKey:
+    description: 'Download translations for only one language key'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
@@ -29,4 +33,4 @@ runs:
       shell: bash
     - id: Execution
       shell: bash
-      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }} ${{ inputs.downloadOptions && '--downloadOptions' }} ${{ inputs.downloadOptions }}
+      run: simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }} ${{ inputs.downloadOptions && '--downloadOptions' }} ${{ inputs.downloadOptions }} ${{ inputs.languageKey && '--languageKey' }} ${{ inputs.languageKey }}
