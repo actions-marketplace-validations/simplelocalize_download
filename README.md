@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download translations
-        uses: simplelocalize/download@latest
+        uses: simplelocalize/download@latest # use 'latest' or specific version number, eg: '2.0.5'
         with:
           apiKey: <YOUR_API_KEY>
           downloadPath: ./{lang}/translations.json
