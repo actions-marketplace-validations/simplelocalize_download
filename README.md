@@ -27,4 +27,5 @@ jobs:
           downloadFormat: single-language-json
           downloadOptions: "ESCAPE_NEW_LINES" # optional
           languageKey: en # optional, it accepts only one language key
+          customerId: ikea # optional, it accepts only one customer id
 ```
