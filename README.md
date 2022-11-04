@@ -1,15 +1,13 @@
-# Download localization files from SimpleLocalize
+# Download localization files
 
-This Github Actions uses official and open-source SimpleLocalize CLI.
+This Github Action uses [official SimpleLocalize CLI](https://github.com/simplelocalize/simplelocalize-cli).
 
-Learn more: https://github.com/simplelocalize/simplelocalize-cli
+Learn more: https://simplelocalize.io/docs/integrations/github-actions/
 
-Documentation: https://simplelocalize.io/docs/cli/download-translations/
-
-## ☁️ Example download action
+## Usage
 
 ```yml
-name: 'Download translations'
+name: 'My project'
 on:
   push:
     branches: [ main, master ]
@@ -18,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Download translations
         uses: simplelocalize/download@latest # use 'latest' or specific version number, eg: '2.0.5'
         with:
