@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Download translations
-        uses: simplelocalize/download@latest # use 'latest' or specific version number, eg: '2.0.5'
+        uses: simplelocalize/download@v2.1
         with:
           apiKey: <YOUR_API_KEY>
           downloadPath: ./{lang}/translations.json
